@@ -1,0 +1,13 @@
+C:\Users\egorw\source\repos\GameFighter\GameFighter\bin\Debug\netcoreapp3.1\GameFighter.exe
+C:\Users\egorw\source\repos\GameFighter\GameFighter\bin\Debug\netcoreapp3.1\GameFighter.deps.json
+C:\Users\egorw\source\repos\GameFighter\GameFighter\bin\Debug\netcoreapp3.1\GameFighter.runtimeconfig.json
+C:\Users\egorw\source\repos\GameFighter\GameFighter\bin\Debug\netcoreapp3.1\GameFighter.runtimeconfig.dev.json
+C:\Users\egorw\source\repos\GameFighter\GameFighter\bin\Debug\netcoreapp3.1\GameFighter.dll
+C:\Users\egorw\source\repos\GameFighter\GameFighter\bin\Debug\netcoreapp3.1\GameFighter.pdb
+C:\Users\egorw\source\repos\GameFighter\GameFighter\obj\Debug\netcoreapp3.1\GameFighter.csprojAssemblyReference.cache
+C:\Users\egorw\source\repos\GameFighter\GameFighter\obj\Debug\netcoreapp3.1\GameFighter.AssemblyInfoInputs.cache
+C:\Users\egorw\source\repos\GameFighter\GameFighter\obj\Debug\netcoreapp3.1\GameFighter.AssemblyInfo.cs
+C:\Users\egorw\source\repos\GameFighter\GameFighter\obj\Debug\netcoreapp3.1\GameFighter.csproj.CoreCompileInputs.cache
+C:\Users\egorw\source\repos\GameFighter\GameFighter\obj\Debug\netcoreapp3.1\GameFighter.dll
+C:\Users\egorw\source\repos\GameFighter\GameFighter\obj\Debug\netcoreapp3.1\GameFighter.pdb
+C:\Users\egorw\source\repos\GameFighter\GameFighter\obj\Debug\netcoreapp3.1\GameFighter.genruntimeconfig.cache
