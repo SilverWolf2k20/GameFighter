@@ -8,6 +8,14 @@ using System;
 
 namespace GameFighter
 {
+    enum PlayerAction : byte
+    {
+        Attack,
+        Heal,
+        BuyBullet,
+        Exit
+    }
+
     /// <summary>
     /// Класс <c>Engine</c> представляет игровой движок.
     /// Содержит все методы для работы игры.
@@ -23,14 +31,28 @@ namespace GameFighter
     /// </remarks>
     class Engine
     {
-        private bool isPlaying;
+        private const int PLAYER_ARMOR  = 50;
+        private const int PLAYER_DAMAGE = 10;
+        private const int PLAYER_HEALTH = 100;
+
+        private bool            isPlaying;
+        private PlayerAction    choice;
+        private Fidhter         player;
+        private Fidhter         computer;
 
         /// <summary>
         /// Инициализирует новый экземпляр класса Engine.
         /// </summary>
         public Engine()
         {
-            isPlaying = true;
+            this.isPlaying = true;
+            this.player = new Fidhter(PLAYER_HEALTH, 
+                                      PLAYER_ARMOR, 
+                                      PLAYER_DAMAGE);
+            Random random = new Random();
+            this.computer = new Fidhter(random.Next(100, 150),
+                                        random.Next(50, 100),
+                                        random.Next(10, 15));
         }
 
         /// <summary>
@@ -48,11 +70,12 @@ namespace GameFighter
         {
             Console.Write("Добро пожаловать в игру!\nДля выбора действий " +
                           "используйте цифры.\nУдачи!\n\n");
-            while (isPlaying) {
+            while (this.isPlaying) {
                 Draw();
                 Input();
                 Update();
             }
+            Console.Write("Спасибо за игру!");
         }
 
         /// <summary>
@@ -63,7 +86,26 @@ namespace GameFighter
         /// </remarks>
         private void Input()
         {
-
+            while (true) {
+                string temp = Console.ReadLine();
+                switch (temp) {
+                    case "0":
+                        this.choice = PlayerAction.Attack;
+                        return;
+                    case "1":
+                        this.choice = PlayerAction.Heal;
+                        return;
+                    case "2":
+                        this.choice = PlayerAction.BuyBullet;
+                        return;
+                    case "3":
+                        this.choice = PlayerAction.Exit;
+                        return;
+                    default:
+                        Console.WriteLine("Неверный ввод");
+                        break;
+                }
+            }
         }
 
         /// <summary>
@@ -74,7 +116,31 @@ namespace GameFighter
         /// </remarks>
         private void Update()
         {
+            switch (this.choice) {
+                case PlayerAction.Attack:
+                    this.computer.Hit(this.player.Damage);
+                    break;
+                case PlayerAction.Heal:
+                    this.player.Heal();
+                    break;
+                case PlayerAction.BuyBullet:
+                    this.player.Recharge();
+                    break;
+                case PlayerAction.Exit:
+                    isPlaying = false;
+                    break;
+            }
 
+
+
+            if (!player.IsAlive()) {
+                Console.WriteLine("Вы проиграли...");
+                isPlaying = false;
+            }
+            if (!computer.IsAlive()) {
+                Console.WriteLine("Вы выиграли!");
+                isPlaying = false;
+            }
         }
 
         /// <summary>
@@ -85,7 +151,12 @@ namespace GameFighter
         /// </remarks>
         private void Draw()
         {
+            this.player.Draw();
+            this.computer.Draw();
 
+            Console.Write("1 - стрелять, 2 - лечиться, " + 
+                          "3 - перезарядка, 4 - выход\n" + 
+                          "Выберите действие: ");
         }
     }
 }
