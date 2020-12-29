@@ -1,13 +1,9 @@
-﻿/******************************************************************************
-* Engine.cs
-*
-* $ Id: Engine.cs v 1.0 2020/12/28 19:03 $
-*
-* Данный файл служит для реализации игрового движка.
-*
-* The following code is (c)copyright 2020, SW Okolo IT.
-* ALL RIGHT RESERVED
-******************************************************************************/
+﻿//-----------------------------------------------------------------------------
+// <copyright file="Engine.cs" company="SW Okolo IT">
+//  Copyright (c) SW Okolo IT. All rights reserved.
+// </copyright>
+// <summary> Данный файл служит для реализации игрового движка. </summary> 
+//-----------------------------------------------------------------------------
 using System;
 
 namespace GameFighter
@@ -20,18 +16,6 @@ namespace GameFighter
     ///   <term>Run</term>
     ///   <description>Операция запуска</description>
     ///  </item>
-    ///  <item>
-    ///   <term>Input</term>
-    ///   <description>Операция получения информации</description>
-    ///  </item>
-    ///  <item>
-    ///   <term>Update</term>
-    ///   <description>Операция обработки</description>
-    ///  </item>
-    ///  <item>
-    ///   <term>Drav</term>
-    ///   <description>Операция прорисовки</description>
-    ///  </item>
     /// </list>
     /// </summary>
     /// <remarks>
@@ -42,14 +26,11 @@ namespace GameFighter
         private bool isPlaying;
 
         /// <summary>
-        /// Инициализирует новый экземпляр класса Engine и выводит приветсвие.
+        /// Инициализирует новый экземпляр класса Engine.
         /// </summary>
         public Engine()
         {
             isPlaying = true;
-
-            Console.Write("Добро пожаловать в игру!\nДля выбора действий " +
-                          "используйте цифры.\nУдачи!\n\n");
         }
 
         /// <summary>
@@ -63,8 +44,10 @@ namespace GameFighter
         ///  законченна.
         ///  </para>
         /// </remarks>
-        public void Run() 
+        public void Run()
         {
+            Console.Write("Добро пожаловать в игру!\nДля выбора действий " +
+                          "используйте цифры.\nУдачи!\n\n");
             while (isPlaying) {
                 Draw();
                 Input();
@@ -78,8 +61,8 @@ namespace GameFighter
         /// <remarks>
         ///  <para>Ожидается пользовательский ввод.</para>
         /// </remarks>
-        private void Input() 
-        { 
+        private void Input()
+        {
 
         }
 
@@ -89,19 +72,19 @@ namespace GameFighter
         /// <remarks>
         ///  <para>Обрабатывается ход игрока, происходит ход компьютера.</para>
         /// </remarks>
-        private void Update() 
-        { 
+        private void Update()
+        {
 
         }
 
         /// <summary>
-        /// Прорисовка данных.
+        /// Выводит данные.
         /// </summary>
         /// <remarks>
         ///  <para>Выводится информация об игроках.</para>
         /// </remarks>
-        private void Draw() 
-        { 
+        private void Draw()
+        {
 
         }
     }
