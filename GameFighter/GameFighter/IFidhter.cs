@@ -13,8 +13,9 @@ namespace GameFighter
     {
         public bool BulletCheck();
         public void Draw();
+        public bool Fire();
         public void Heal();
-        public bool Hit(int value);
+        public ShotState Hit(int value);
         public bool IsAlive();
         public void Recharge();
     }
