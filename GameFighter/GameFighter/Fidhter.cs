@@ -47,7 +47,7 @@ namespace GameFighter
     class Fidhter : IFidhter
     {
         private const int MAX_BULLET = 20;
-        private int max_health;
+        private readonly int max_health;
 
         private int armor;
         private int bullet;
