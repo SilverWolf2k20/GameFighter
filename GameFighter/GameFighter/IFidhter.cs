@@ -12,7 +12,7 @@ namespace GameFighter
     interface IFidhter
     {
         public bool BulletCheck();
-        public void Draw();
+        public string OutputtingInformationToString ();
         public bool Fire();
         public void Heal();
         public ShotState Hit(int value);

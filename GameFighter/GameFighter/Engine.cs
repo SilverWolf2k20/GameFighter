@@ -8,6 +8,7 @@ using System;
 
 namespace GameFighter
 {
+    using static Console;
     /// <summary>
     /// Класс <c>Engine</c> представляет игровой движок.
     /// Содержит все методы для работы игры.
@@ -36,14 +37,14 @@ namespace GameFighter
         /// </remarks>
         public void Run()
         {
-            Console.Write("Добро пожаловать в игру!\nДля выбора действий " +
-                          "используйте цифры.\nУдачи!\n\n");
+            Write("Добро пожаловать в игру!\nДля выбора действий " +
+                  "используйте цифры.\nУдачи!\n\n");
             while (this.isPlaying) {
                 Draw();
                 Input();
                 Update();
             }
-            Console.Write("Спасибо за игру!");
+            Write("Спасибо за игру!");
         }
 
         /// <summary>
@@ -59,10 +60,10 @@ namespace GameFighter
                 int temp;
                 // Работает пока не будет введено число.
                 while (!int.TryParse(Console.ReadLine(), out temp))
-                    Console.WriteLine("Неверный ввод!");
+                    WriteLine("Неверный ввод!");
                 // Проверяет вхождение числа в диапазон.
-                if (temp <= 0 && temp < (int)PlayerAction.Exit)
-                    Console.WriteLine("Неверный ввод!");
+                if (temp <= 0 || temp > (int)PlayerAction.Exit)
+                    WriteLine("Неверный ввод!");
                 else {
                     this.choice = (PlayerAction)temp;
                     break;
@@ -88,25 +89,25 @@ namespace GameFighter
                         switch (this.computer.Hit(this.player.Damage)) {
                             // Обработка состояния урона.
                             case ShotState.Miss:
-                                Console.WriteLine("Игрок промахнулся...");
+                                WriteLine("Игрок промахнулся...");
                                 break;
                             case ShotState.Critical:
-                                Console.WriteLine("Компьютер получил критический урон.");
+                                WriteLine("Компьютер получил критический урон.");
                                 break;
                             case ShotState.Normal:
-                                Console.WriteLine("Компьютер получил урон.");
+                                WriteLine("Компьютер получил урон.");
                                 break;
                         }
                     }
                     break;
                 case PlayerAction.Heal:
                     this.player.Heal();
-                    Console.WriteLine("Игрок использовал лечение.");
+                    WriteLine("Игрок использовал лечение.");
                     break;
 
                 case PlayerAction.BuyBullet:
                     this.player.Recharge();
-                    Console.WriteLine("Игрок купил патроны.");
+                    WriteLine("Игрок купил патроны.");
                     break;
 
                 case PlayerAction.Exit:
@@ -120,11 +121,11 @@ namespace GameFighter
             switch (random.Next(1, 10)) {
                 case (int)PlayerAction.Heal:
                     this.computer.Heal();
-                    Console.WriteLine("Компьютер использовал лечение.");
+                    WriteLine("Компьютер использовал лечение.");
                     break;
                 case (int)PlayerAction.BuyBullet:
                     this.computer.Recharge();
-                    Console.WriteLine("Компьютер купил патроны.");
+                    WriteLine("Компьютер купил патроны.");
                     break;
                 default:
                     // В default был положен выстрел чтобы он совершался с 80%
@@ -134,13 +135,13 @@ namespace GameFighter
                         switch (this.player.Hit(this.computer.Damage)) {
                             // Обработка состояния урона.
                             case ShotState.Miss:
-                                Console.WriteLine("Компьютер промахнулся...");
+                                WriteLine("Компьютер промахнулся...");
                                 break;
                             case ShotState.Critical:
-                                Console.WriteLine("Игрок получил критический урон.");
+                                WriteLine("Игрок получил критический урон.");
                                 break;
                             case ShotState.Normal:
-                                Console.WriteLine("Игрок получил урон.");
+                                WriteLine("Игрок получил урон.");
                                 break;
                         }
                     }
@@ -149,11 +150,11 @@ namespace GameFighter
 
             // Условия победы/проигрыша
             if (!player.IsAlive()) {
-                Console.WriteLine("Вы проиграли...");
+                WriteLine("Вы проиграли...");
                 isPlaying = false;
             }
             if (!computer.IsAlive()) {
-                Console.WriteLine("Вы выиграли!");
+                WriteLine("Вы выиграли!");
                 isPlaying = false;
             }
         }
@@ -166,14 +167,10 @@ namespace GameFighter
         /// </remarks>
         private void Draw()
         {
-            Console.Write("\nИгрок ");
-            this.player.Draw();
-            Console.Write("Компьютер ");
-            this.computer.Draw();
-
-            Console.Write("1 - стрелять, 2 - лечиться, " + 
-                          "3 - перезарядка, 4 - выход\n" + 
-                          "Выберите действие: ");
+            Write($"\nИгрок     {player.OutputtingInformationToString()}");
+            Write($"\nКомпьютер {computer.OutputtingInformationToString()}");
+            Write("\n1 - стрелять, 2 - лечиться, 3 - перезарядка, 4 - выход\n" +
+                  "Выберите действие: ");
         }
     }
 }

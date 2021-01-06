@@ -26,7 +26,7 @@ namespace GameFighter
         {
             Engine engine = new Engine();
             engine.Run();
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }

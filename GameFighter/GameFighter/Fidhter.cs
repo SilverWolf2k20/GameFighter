@@ -47,7 +47,7 @@ namespace GameFighter
     class Fidhter : IFidhter
     {
         private const int MAX_BULLET = 20;
-        private readonly int max_health;
+        private readonly int MAX_HEALTH;
 
         private int armor;
         private int bullet;
@@ -59,8 +59,8 @@ namespace GameFighter
         /// </summary>
         public Fidhter(int health, int armor, int damage)
         {
-            this.max_health = health;
-            this.health     = this.max_health;
+            this.MAX_HEALTH = health;
+            this.health     = this.MAX_HEALTH;
             this.armor      = armor;
             this.damage     = damage;
             this.bullet     = MAX_BULLET;
@@ -77,13 +77,10 @@ namespace GameFighter
         /// <summary>
         /// Выводит состояние истребителя.
         /// </summary>
-        public void Draw()
+        public string OutputtingInformationToString()
         {
-            Console.WriteLine($"показатели: " +
-                              $"Жизнь: {health} "  +
-                              $"Броня: {armor} "   +
-                              $"Урон: {damage} "   +
-                              $"Патроны: {bullet}");
+            return $"показатели: Жизнь: {health} Броня: {armor} " +
+                   $"Урон: {damage} Патроны: {bullet}";
         }
 
         /// <summary>
@@ -108,9 +105,9 @@ namespace GameFighter
         /// </remarks>
         public void Heal() 
         {
-            this.health += (int)(max_health * 0.2);
-            if(this.health > this.max_health)
-                this.health = this.max_health;
+            this.health += (int)(MAX_HEALTH * 0.2);
+            if(this.health > this.MAX_HEALTH)
+                this.health = this.MAX_HEALTH;
         }
 
         /// <summary>
