@@ -5,8 +5,6 @@
 // <summary> Данный файл служит для реализации игрового движка. </summary> 
 //-----------------------------------------------------------------------------
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GameFighter
 {
@@ -87,6 +85,7 @@ namespace GameFighter
                                       PLAYER_DAMAGE);
 
             Random random = new Random();
+
             this.computer = new Fidhter(random.Next(100, 150),
                                         random.Next(50, 100),
                                         random.Next(10, 15));
