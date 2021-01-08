@@ -67,6 +67,13 @@ namespace GameFighter
         }
 
         /// <summary>
+        /// Возвращает количество урона.
+        /// </summary>
+        public int Damage {
+            get => damage;
+        }
+
+        /// <summary>
         /// Проверяет наличие патронов.
         /// </summary>
         /// <remarks>
@@ -162,9 +169,5 @@ namespace GameFighter
         ///  <para>Количество патронов становиться равным 20.</para>
         /// </remarks>
         public void Recharge() => this.bullet = MAX_BULLET;
-
-        public int Damage {
-            get => damage;
-        }
     }
 }
