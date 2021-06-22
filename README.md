@@ -1,4 +1,6 @@
 ![alt text](Diagram.png "Диаграмма классов")
+
+
 ![coverage](https://img.shields.io/badge/version-1.0-blue) ![coverage](https://img.shields.io/badge/-Okolo%20IT-orange)
 # GameFighter
 ---
