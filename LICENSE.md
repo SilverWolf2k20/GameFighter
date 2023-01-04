@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2021 SilverWolf2k20
+Copyright (c) 2021 Okolo IT
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
