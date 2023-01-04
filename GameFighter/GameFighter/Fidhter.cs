@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------------
-// <copyright file="Fidhter.cs" company="SW Okolo IT">
-//  Copyright (c) SW Okolo IT. All rights reserved.
+// <copyright file="Fidhter.cs" company="Okolo IT">
+//  Copyright (c) Okolo IT. All rights reserved.
 // </copyright>
 // <summary> 
 // Данный файл служит для реализации класса истребителя. 

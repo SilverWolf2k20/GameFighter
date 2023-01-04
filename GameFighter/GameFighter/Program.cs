@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------------
-// <copyright file="Program.cs" company="SW Okolo IT">
-//  Copyright (c) SW Okolo IT. All rights reserved.
+// <copyright file="Program.cs" company="Okolo IT">
+//  Copyright (c) Okolo IT. All rights reserved.
 // </copyright>
 // <summary> Данный файл начальной точкой программы. </summary> 
 //-----------------------------------------------------------------------------
